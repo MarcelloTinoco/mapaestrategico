@@ -7,7 +7,7 @@ import mapaestrategico.marinha.grafico.CaixaComTituloETexto;
 
 public class Visao {
 
-	public static final String VISAO = "Vis√£o";
+	public static final String VISAO = "Vis„o";
 	
 	private Ponto coordenadaInicial;
 	private int largura;

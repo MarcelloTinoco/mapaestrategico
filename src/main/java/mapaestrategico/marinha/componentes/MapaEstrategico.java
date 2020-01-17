@@ -26,13 +26,13 @@ public class MapaEstrategico {
 	public MapaEstrategico(Missao missao, Visao visao, List<Perspectiva> perspectivas) {
 		
 		if(missao==null) {
-			throw new IllegalArgumentException("Miss√£o n√£o pode ser nulla.");
+			throw new IllegalArgumentException("Miss„o n„o pode ser nulla.");
 		}
 		if(visao==null) {
-			throw new IllegalArgumentException("Vis√£o n√£o pode ser nulla.");
+			throw new IllegalArgumentException("Vis„o n„o pode ser nulla.");
 		}
 		if(perspectivas==null || (perspectivas!=null && perspectivas.isEmpty())) {
-			throw new IllegalArgumentException("A lista de perspectivas n√£o pode ser nulla ou vazia.");
+			throw new IllegalArgumentException("A lista de perspectivas n„o pode ser nulla ou vazia.");
 		}
 		
 		this.missao       = missao;

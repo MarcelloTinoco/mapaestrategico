@@ -28,7 +28,7 @@ public class MapaEstrategicoPanel extends JPanel{
 	  	super.paintComponent(g);
 	  	
 	  	boolean irParaArquivo = false;
-	  	int LARGURA_CAIXA = 2100;
+	  	int LARGURA_CAIXA = 1500;
 	  	
 	  	
 	  	
@@ -42,19 +42,19 @@ public class MapaEstrategicoPanel extends JPanel{
 	  	//300DPI
 	  	BufferedImage bufferedImage = new BufferedImage(2340, 3300, BufferedImage.TYPE_INT_RGB);
         // Create a graphics which can be used to draw into the buffered image
-        //A linha seguinte √© utilizada para gerar a imagen no arquivo       
-	  	Graphics2D g2d = bufferedImage.createGraphics(); irParaArquivo = true;
+        //A linha seguinte sera utilizada para se gerar a imagem no arquivo       
+	  	//Graphics2D g2d = bufferedImage.createGraphics(); irParaArquivo = true;
         
-	  	//Graphics2D g2d = (Graphics2D) g.create();
+	  	Graphics2D g2d = (Graphics2D) g.create();
 	  	g2d.setPaint(Color.WHITE);
 	  	g2d.setBackground(Color.WHITE);
 	  	  	
 	  	
-	  	Missao missaoNova = new Missao("Gerenciar a concess√£o de benef√≠cios de veteranos militares e civis, ex-combatentes, anistiados pol√≠ticos e seus respectivos pensionistas, a fim de contribuir para a Administra√ß√£o do pessoal da Marinha do Brasil.");
-	  	Visao visaoNova = new Visao("Agregar valor aos servi√ßos prestados √† fam√≠lia naval, at√© 2026, por meio da utiliza√ß√£o da tecnologia em seus processos internos.");
+	  	Missao missaoNova = new Missao("Gerenciar a concess„o de benefÌcios de veteranos militares e civis, ex-combatentes, anistiados polÌticos e seus respectivos pensionistas, a fim de contribuir para a AdministraÁ„o do pessoal da Marinha do Brasil.");
+	  	Visao visaoNova = new Visao("Agregar valor aos serviÁos prestados ‡† famÌlia naval, atÈ 2026, por meio da utilizaÁ„o da tecnologia em seus processos internos.");
 	  	List<Perspectiva> perspectivas = new ArrayList<Perspectiva>();
 	  	
-	  	MapaEstrategico me = new MapaEstrategico(missaoNova, visaoNova, perspectivas);
+	  	//MapaEstrategico me = new MapaEstrategico(missaoNova, visaoNova, perspectivas);
 	  	
 	  	
 	  	
@@ -62,7 +62,6 @@ public class MapaEstrategicoPanel extends JPanel{
 	  	//pintar o fundo de branco
 	  	g2d.fillRect(0, 0, 2340 , 3300);
 	  	
-	  	//int larguraCaixaPerspectiva = 900;
 	    int larguraCaixaPerspectiva = LARGURA_CAIXA;
 	  	int meioCaixaPerspectiva = new Long(larguraCaixaPerspectiva / 2).intValue();
 	  	int espacoEntreCaixasPerspectiva = 25;
@@ -73,14 +72,14 @@ public class MapaEstrategicoPanel extends JPanel{
 	  	
 	  	//Desenhar caixa missao
 	  	Ponto pCoordenadaInicialMissao = new Ponto(coordenadaXPerspectiva, coordenadaYPerspectiva);
-	  	String textoMissao = "Gerenciar a concess√£o de benef√≠cios de veteranos militares e civis, ex-combatentes, anistiados pol√≠ticos e seus respectivos pensionistas, a fim de contribuir para a Administra√ß√£o do pessoal da Marinha do Brasil.";
-	  	CaixaComTituloETexto missao = new CaixaComTituloETexto(pCoordenadaInicialMissao, larguraCaixasMissaoVisao - espacoEntreCaixasPerspectiva, alturaCaixaMissaoVisao, "Miss√£o", textoMissao, Color.LIGHT_GRAY);
+	  	String textoMissao = "Gerenciar a concess„o de benefÌcios de veteranos militares e civis, ex-combatentes, anistiados polÌticos e seus respectivos pensionistas, a fim de contribuir para a AdministraÁ„o do pessoal da Marinha do Brasil.";
+	  	CaixaComTituloETexto missao = new CaixaComTituloETexto(pCoordenadaInicialMissao, larguraCaixasMissaoVisao - espacoEntreCaixasPerspectiva, alturaCaixaMissaoVisao, "Miss„o", textoMissao, Color.LIGHT_GRAY);
 	  	missao.desenhar(g2d);
 	  	
 	  	//Desenhar caixa visao
 	  	Ponto pCoordenadaInicialVisao = new Ponto(coordenadaXPerspectiva + larguraCaixasMissaoVisao + espacoEntreCaixasPerspectiva, coordenadaYPerspectiva);
-	  	String textoVisao = "Agregar valor aos servi√ßos prestados √† fam√≠lia naval, at√© 2026, por meio da utiliza√ß√£o da tecnologia em seus processos internos.";
-	  	CaixaComTituloETexto visao = new CaixaComTituloETexto(pCoordenadaInicialVisao, larguraCaixasMissaoVisao - espacoEntreCaixasPerspectiva, alturaCaixaMissaoVisao, "Vis√£o", textoVisao, Color.BLUE);
+	  	String textoVisao = "Agregar valor aos serviÁos prestados ‡† famÌlia naval, atÈ 2026, por meio da utilizaÁ„o da tecnologia em seus processos internos.";
+	  	CaixaComTituloETexto visao = new CaixaComTituloETexto(pCoordenadaInicialVisao, larguraCaixasMissaoVisao - espacoEntreCaixasPerspectiva, alturaCaixaMissaoVisao, "Vis„o", textoVisao, Color.BLUE);
 	  	visao.desenhar(g2d);
 	  		  	
 	  	
@@ -90,7 +89,7 @@ public class MapaEstrategicoPanel extends JPanel{
 	  	int larguraSeta = 500;
 	  	//Define a altura da seta
 	  	int alturaSeta = 90;
-	  	//A coordenda Y do vertice da seta √© calculado como o ponto Y da caixa missao visao + a altura da caixa missao visao
+	  	//A coordenda Y do vertice da seta È calculado como o ponto Y da caixa missao visao + a altura da caixa missao visao
 	  	int coordenadaYVerticeSeta = coordenadaYPerspectiva + alturaCaixaMissaoVisao;
 	  	//A coordenada X da seta e calculado como o ponto x da perspectiva + (tamanho da metade da caixa perspectiva - a metade da largura da seta)
 	  	int coordenadaXSeta = new Long(coordenadaXPerspectiva + (meioCaixaPerspectiva - (larguraSeta/2))).intValue();
@@ -106,7 +105,7 @@ public class MapaEstrategicoPanel extends JPanel{
 	  	cct1.desenhar(g2d);
 	  	
 	  	Ponto pCoordenadaInicialCaixa2 = new Ponto(coordenadaXPerspectiva,coordenadaInicialAlturaDaCaixa+alturaDaCaixa);
-	  	CaixaComTitulo cct2 = new CaixaComTitulo(pCoordenadaInicialCaixa2, larguraCaixaPerspectiva, alturaDaCaixa, "Processos Final√≠sticos", Color.LIGHT_GRAY);
+	  	CaixaComTitulo cct2 = new CaixaComTitulo(pCoordenadaInicialCaixa2, larguraCaixaPerspectiva, alturaDaCaixa, "Processos FinalÌsticos", Color.LIGHT_GRAY);
 	  	cct2.desenhar(g2d);
 	  	
 	  	Ponto pCoordenadaInicialCaixa3 = new Ponto(coordenadaXPerspectiva,coordenadaInicialAlturaDaCaixa + (2 * alturaDaCaixa));
@@ -119,17 +118,17 @@ public class MapaEstrategicoPanel extends JPanel{
 	  		  
 	  	//Desenhar as caixas com texto
 	  	Ponto pCoordenadaInicialCaixaComTexto1 = new Ponto (pCoordenadaInicialCaixa1.getX()+10, pCoordenadaInicialCaixa1.getY()+25);
-	  	CaixaComTexto ccTexto1 = new CaixaComTexto(pCoordenadaInicialCaixaComTexto1, 250, 100 , "Promover a excel√™ncia no gerenciamento dos direitos e deveres dos inativos e pensionistas da marinha", Color.BLACK);
+	  	CaixaComTexto ccTexto1 = new CaixaComTexto(pCoordenadaInicialCaixaComTexto1, 250, 100 , "Promover a excelÍncia no gerenciamento dos direitos e deveres dos inativos e pensionistas da marinha", Color.BLACK);
 	  	ccTexto1.desenhar(g2d);
 	
 	  	if(irParaArquivo) {
 	  		try {
 	  			// Save as PNG
-	  			File file = new File("c:\\desenvolvimento\\mapaEstrategico.png");
+	  			File file = new File("c:\\develop\\mapaEstrategico.png");
 		        ImageIO.write(bufferedImage, "png", file);
 		        
 				// Save as JPEG
-			    file = new File("c:\\desenvolvimento\\mapaEstrategico.jpg");
+			    file = new File("c:\\develop\\mapaEstrategico.jpg");
 			    ImageIO.write(bufferedImage, "jpg", file);
 			} catch (IOException e) {
 				e.printStackTrace();

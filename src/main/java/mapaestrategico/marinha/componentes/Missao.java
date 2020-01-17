@@ -7,7 +7,7 @@ import mapaestrategico.marinha.grafico.CaixaComTituloETexto;
 
 public class Missao {
 	
-	public static final String MISSAO = "Miss√£o";
+	public static final String MISSAO = "Miss„o";
 	
 	private Ponto coordenadaInicial;
 	private int largura;
